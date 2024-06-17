@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@if (TempData["IsSuccess"] != null)
+{
+    <div class="alert alert-success">@TempData["IsSuccess"]</div>
+}
+@if (TempData["IsError"] != null)
+{
+    <div class="alert alert-danger">@TempData["IsError"]</div>
+}
+
+<main>
+    <section class="row text-center" aria-labelledby="aspnetTitle">
+        <h1 id="title">Sistema de gestion de empresas</h1>
+        <p class="lead">Desde aquí podras controlar tu empresa.</p>
+    </section>
+
+    <div class="row">
+        
+    </div>
+</main>
