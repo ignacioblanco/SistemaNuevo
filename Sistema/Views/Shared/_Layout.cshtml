@@ -160,7 +160,7 @@
                 <li><a href="#">Stock</a></li>
             </ul>
             <div class="sidebar-footer">
-                <span>Logged in as:  @claims.First(c => c.Type == Constantes.CustomClaimIdentity.Nombre.ToString()).Value.ToUpper()</span>
+                <span>Logged in as:  @{/*(User.Identity.IsAuthenticated) ? claims.First(c => c.Type == Constantes.CustomClaimIdentity.Nombre.ToString()).Value.ToUpper() : "-";*/} </span>
             </div>
         </aside>
         <div class="main-content col-md-8">
