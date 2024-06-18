@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using Sistema.lib.Entities
+@using System.Security.Claims
+@{
+    var identity = (ClaimsIdentity)User.Identity;
+    IEnumerable<Claim> claims = identity.Claims;
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -10,6 +16,10 @@
     <style>
         body {
             background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
         }
 
         .navbar {
@@ -22,6 +32,59 @@
 
         .dropdown-menu {
             background-color: #343a40;
+        }
+
+        .container-fluid {
+            display: flex;
+            flex: 1;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            background-color: #444;
+        }
+
+        .sidebar-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            flex: 1;
+        }
+
+            .sidebar-menu li {
+                padding: 15px 20px;
+            }
+
+                .sidebar-menu li a {
+                    color: #fff;
+                    text-decoration: none;
+                    display: block;
+                }
+
+                .sidebar-menu li ul {
+                    padding-left: 20px;
+                }
+
+        .sidebar-footer {
+            padding: 20px;
+            background-color: #444;
+            text-align: center;
+        }
+
+        .main-content {
+            margin-left: 10%;
+            padding: 20px;
+            flex: 1;
+            background-color: #fff;
+            overflow: auto;
         }
 
         footer {
@@ -73,14 +136,38 @@
                             <li><a class="dropdown-item" href="@Url.Action("RecuperarPass", "Account")">Cambiar contraseña</a></li>
                         </ul>
                     </div>
+
                 }
             </div>
         </div>
     </nav>
-    <div class="container mt-4">
-        @RenderBody()
+    <div class="container-fluid">
+        <aside class="sidebar col-md-4">
+            <div class="sidebar-header">
+                <h2>Blancplast</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="#">Overview</a></li>
+                <li>
+                    <a href="#">Dashboards</a>
+                    <ul>
+                        <li><a href="#">Default</a></li>
+                        <li><a href="#">Minimal</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Proveedores</a></li>
+                <li><a href="#">Pedidos</a></li>
+                <li><a href="#">Stock</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <span>Logged in as:  @claims.First(c => c.Type == Constantes.CustomClaimIdentity.Nombre.ToString()).Value.ToUpper()</span>
+            </div>
+        </aside>
+        <div class="main-content col-md-8">
+            @RenderBody()
+        </div>
     </div>
-    <footer class="mt-4">
+    <footer>
         <p>&copy; Todos los derechos reservados - @DateTime.Now.Year</p>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

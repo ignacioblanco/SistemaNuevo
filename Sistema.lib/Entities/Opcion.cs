@@ -13,6 +13,7 @@ namespace Sistema.lib.Entities
     {
         public Guid ID { get; set; }
 
+        public string Codigo { get; set; }
         public string Descripcion { get; set; }
     }
 }

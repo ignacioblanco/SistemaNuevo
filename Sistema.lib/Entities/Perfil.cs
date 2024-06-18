@@ -12,6 +12,8 @@ namespace Sistema.lib.Entities
     public class Perfil
     {
         public Guid ID { get; set; }
+
+        public string Codigo { get; set; }
         public string Descripcion { get; set; }
     }
 }

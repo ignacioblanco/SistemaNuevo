@@ -56,5 +56,38 @@ namespace Sistema.lib.Entities
                 return l;
             }
         }
+        public struct Roles
+        {
+            public const string Administrador = "ADMIN";
+            public const string Cliente = "CLIEN";
+            public const string Sistema = "SIST";
+        }
+
+        public static List<ConstantesItem> RolesTablaItem
+        {
+            get
+            {
+                List<ConstantesItem> tg = new List<ConstantesItem>();
+                tg.Add(new ConstantesItem(Roles.Administrador, "Administrador interno"));
+                tg.Add(new ConstantesItem(Roles.Cliente, "Cliente"));
+                tg.Add(new ConstantesItem(Roles.Sistema, "SISTEMA"));
+                return tg;
+            }
+        }
+
+        public static List<SelectListItem> RolesSelectItem
+        {
+            get
+            {
+                List<SelectListItem> l = new List<SelectListItem>();
+                foreach (ConstantesItem t in Constantes.RolesTablaItem)
+                    l.Add(new SelectListItem { Value = t.Value, Text = t.Text });
+                l = l.OrderBy(c => c.Text).ToList();
+                l.Insert(0, new SelectListItem { Text = "TODOS", Value = Constantes.FiltroTodos });
+                return l;
+            }
+        }
     }
+
+    
 }

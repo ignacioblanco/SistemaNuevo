@@ -157,8 +157,9 @@ namespace Sistema.Controllers
 
                     if (string.Compare(hashedPassword, hashedPassword2) != 0)
                     {
-                        return View(model);
+
                         TempData["IsError"] = "Las contraseñas no son iguales";
+                        return View(model);
                     }
                     else
                     {
@@ -190,6 +191,11 @@ namespace Sistema.Controllers
                 var hash = sha256.ComputeHash(bytes);
                 return Convert.ToBase64String(hash);
             }
+        }
+
+        public ActionResult ABMUsuarios(){
+
+            return View(new RecuperarPasswordModel());
         }
     }
 }

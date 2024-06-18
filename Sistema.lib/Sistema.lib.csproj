@@ -55,6 +55,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -88,9 +89,12 @@
     <Compile Include="Entities\ConstantesItem.cs" />
     <Compile Include="Entities\Cuenta.cs" />
     <Compile Include="Entities\DatabaseContext.cs" />
+    <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Entities\Opcion.cs" />
     <Compile Include="Entities\OpcionPerfil.cs" />
     <Compile Include="Entities\Perfil.cs" />
+    <Compile Include="Helpers\Logger.cs" />
+    <Compile Include="Models\ABMUsuariosModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RecuperarPasswordModel.cs" />
     <Compile Include="Models\RegisterModel.cs" />
