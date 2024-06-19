@@ -1,0 +1,128 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.dashboard-container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background-color: #444;
+}
+
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .sidebar-menu li {
+        padding: 15px 20px;
+    }
+
+        .sidebar-menu li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+.sidebar-footer {
+    padding: 20px;
+    background-color: #444;
+    text-align: center;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    .header h1 {
+        margin: 0;
+    }
+
+.filters select {
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stat-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.stat-icon {
+    font-size: 2em;
+    margin-right: 20px;
+}
+
+.stat-info h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.stat-info p {
+    margin: 0;
+    color: #888;
+}
+
+.charts {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.chart {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 48%;
+}
+
+.chart-content {
+    margin-top: 20px;
+}
+
+.additional-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 48%;
+}
