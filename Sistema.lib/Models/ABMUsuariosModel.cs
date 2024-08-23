@@ -19,6 +19,7 @@ namespace Sistema.lib.Models
         public string Apellido { get; set; }
 
         [Required(ErrorMessage = "El mail es obligatorio.")]
+        [DataType(DataType.EmailAddress)]
         [Display(Name = "Mail")]
         public string Mail { get; set; }
 

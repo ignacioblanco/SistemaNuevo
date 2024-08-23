@@ -17,6 +17,37 @@ namespace Sistema.lib.Entities
 
         public const string FiltroTodos = "TODO";
 
+        public struct Opciones
+        {
+            public const string AltaUsuarios = "ALUSU";
+            public const string EditarUsuario = "EDUSU";
+        }
+
+        public static List<ConstantesItem> OpcionesTablaItem
+        {
+            get
+            {
+                List<ConstantesItem> tg = new List<ConstantesItem>();
+                tg.Add(new ConstantesItem(Opciones.AltaUsuarios, "Alta de usuarios"));
+                tg.Add(new ConstantesItem(Opciones.EditarUsuario, "Edicion de usuarios"));
+                return tg;
+            }
+        }
+
+        public static List<SelectListItem> OpcionesSelectItem
+        {
+            get
+            {
+                List<SelectListItem> l = new List<SelectListItem>();
+                foreach (ConstantesItem t in Constantes.OpcionesTablaItem)
+                    l.Add(new SelectListItem { Value = t.Value, Text = t.Text });
+                l = l.OrderBy(c => c.Text).ToList();
+                l.Insert(0, new SelectListItem { Text = "TODOS", Value = Constantes.FiltroTodos });
+                return l;
+            }
+        }
+
+
         public enum CustomClaimIdentity
         {
             Nombre,
@@ -87,6 +118,7 @@ namespace Sistema.lib.Entities
                 return l;
             }
         }
+
     }
 
     
